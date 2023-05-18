@@ -1,0 +1,57 @@
+[
+ {
+   "Year": 2009,
+   "Intact": 229,
+   "Drifted": 83
+ },
+ {
+   "Year": 2010,
+   "Intact": 222,
+   "Drifted": 65
+ },
+ {
+   "Year": 2011,
+   "Intact": 277,
+   "Drifted": 62
+ },
+ {
+   "Year": 2012,
+   "Intact": 322,
+   "Drifted": 58
+ },
+ {
+   "Year": 2013,
+   "Intact": 264,
+   "Drifted": 40
+ },
+ {
+   "Year": 2014,
+   "Intact": 310,
+   "Drifted": 47
+ },
+ {
+   "Year": 2015,
+   "Intact": 312,
+   "Drifted": 47
+ },
+ {
+   "Year": 2016,
+   "Intact": 336,
+   "Drifted": 27
+ },
+ {
+   "Year": 2017,
+   "Intact": 448,
+   "Drifted": 41
+ },
+ {
+   "Year": 2018,
+   "Intact": 720,
+   "Drifted": 42
+ },
+ {
+   "Year": 2019,
+   "Intact": 256,
+   "Drifted": 12
+ }
+]

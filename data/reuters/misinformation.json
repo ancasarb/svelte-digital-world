@@ -1,0 +1,152 @@
+[
+ {
+   "region": "europe",
+   "topic": "covid-19",
+   "percentage": 47
+ },
+ {
+   "region": "north america",
+   "topic": "covid-19",
+   "percentage": 53
+ },
+ {
+   "region": "asia",
+   "topic": "covid-19",
+   "percentage": 45
+ },
+ {
+   "region": "latin america",
+   "topic": "covid-19",
+   "percentage": 54
+ },
+ {
+   "region": "africa",
+   "topic": "covid-19",
+   "percentage": 47
+ },
+ {
+   "region": "europe",
+   "topic": "politics",
+   "percentage": 34
+ },
+ {
+   "region": "north america",
+   "topic": "politics",
+   "percentage": 43
+ },
+ {
+   "region": "asia",
+   "topic": "politics",
+   "percentage": 42
+ },
+ {
+   "region": "latin america",
+   "topic": "politics",
+   "percentage": 51
+ },
+ {
+   "region": "africa",
+   "topic": "politics",
+   "percentage": 49
+ },
+ {
+   "region": "europe",
+   "topic": "celebrities",
+   "percentage": 20
+ },
+ {
+   "region": "north america",
+   "topic": "celebrities",
+   "percentage": 22
+ },
+ {
+   "region": "asia",
+   "topic": "celebrities",
+   "percentage": 29
+ },
+ {
+   "region": "latin america",
+   "topic": "celebrities",
+   "percentage": 33
+ },
+ {
+   "region": "africa",
+   "topic": "celebrities",
+   "percentage": 48
+ },
+ {
+   "region": "europe",
+   "topic": "climate change",
+   "percentage": 19
+ },
+ {
+   "region": "north america",
+   "topic": "climate change",
+   "percentage": 32
+ },
+ {
+   "region": "asia",
+   "topic": "climate change",
+   "percentage": 15
+ },
+ {
+   "region": "latin america",
+   "topic": "climate change",
+   "percentage": 21
+ },
+ {
+   "region": "africa",
+   "topic": "climate change",
+   "percentage": 19
+ },
+ {
+   "region": "europe",
+   "topic": "immigration",
+   "percentage": 20
+ },
+ {
+   "region": "north america",
+   "topic": "immigration",
+   "percentage": 27
+ },
+ {
+   "region": "asia",
+   "topic": "immigration",
+   "percentage": 9
+ },
+ {
+   "region": "latin america",
+   "topic": "immigration",
+   "percentage": 18
+ },
+ {
+   "region": "africa",
+   "topic": " immigration",
+   "percentage": 16
+ },
+ {
+   "region": "europe",
+   "topic": "products(e.g. scams)",
+   "percentage": 16
+ },
+ {
+   "region": "north america",
+   "topic": "products(e.g. scams)",
+   "percentage": 19
+ },
+ {
+   "region": "asia",
+   "topic": "products(e.g. scams)",
+   "percentage": 22
+ },
+ {
+   "region": "latin america",
+   "topic": "products(e.g. scams)",
+   "percentage": 26
+ },
+ {
+   "region": "africa",
+   "topic": "products(e.g. scams)",
+   "percentage": 29
+ }
+]
