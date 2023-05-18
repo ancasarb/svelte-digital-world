@@ -6,4 +6,4 @@
 	$: console.log(data);
 </script>
 
-<p>content drift</p>
+<p class="text-3xl font-bold underline">content drift</p>
