@@ -1,0 +1,134 @@
+[
+	{
+		"year": 1998,
+		"intact": 30,
+		"ambiguous": 17,
+		"rotted": 119
+	},
+	{
+		"year": 1999,
+		"intact": 156,
+		"ambiguous": 75,
+		"rotted": 570
+	},
+	{
+		"year": 2000,
+		"intact": 131,
+		"ambiguous": 74,
+		"rotted": 422
+	},
+	{
+		"year": 2001,
+		"intact": 144,
+		"ambiguous": 76,
+		"rotted": 411
+	},
+	{
+		"year": 2002,
+		"intact": 167,
+		"ambiguous": 61,
+		"rotted": 355
+	},
+	{
+		"year": 2003,
+		"intact": 256,
+		"ambiguous": 100,
+		"rotted": 435
+	},
+	{
+		"year": 2004,
+		"intact": 272,
+		"ambiguous": 118,
+		"rotted": 407
+	},
+	{
+		"year": 2005,
+		"intact": 438,
+		"ambiguous": 193,
+		"rotted": 672
+	},
+	{
+		"year": 2006,
+		"intact": 8159,
+		"ambiguous": 5695,
+		"rotted": 12328
+	},
+	{
+		"year": 2007,
+		"intact": 15810,
+		"ambiguous": 6596,
+		"rotted": 18498
+	},
+	{
+		"year": 2008,
+		"intact": 34613,
+		"ambiguous": 12635,
+		"rotted": 35355
+	},
+	{
+		"year": 2009,
+		"intact": 81059,
+		"ambiguous": 25695,
+		"rotted": 72785
+	},
+	{
+		"year": 2010,
+		"intact": 62747,
+		"ambiguous": 19113,
+		"rotted": 46354
+	},
+	{
+		"year": 2011,
+		"intact": 75257,
+		"ambiguous": 20294,
+		"rotted": 43558
+	},
+	{
+		"year": 2012,
+		"intact": 90138,
+		"ambiguous": 21397,
+		"rotted": 43285
+	},
+	{
+		"year": 2013,
+		"intact": 84491,
+		"ambiguous": 16144,
+		"rotted": 36111
+	},
+	{
+		"year": 2014,
+		"intact": 93192,
+		"ambiguous": 14238,
+		"rotted": 31375
+	},
+	{
+		"year": 2015,
+		"intact": 93603,
+		"ambiguous": 10294,
+		"rotted": 21658
+	},
+	{
+		"year": 2016,
+		"intact": 105205,
+		"ambiguous": 8264,
+		"rotted": 17796
+	},
+	{
+		"year": 2017,
+		"intact": 124238,
+		"ambiguous": 7572,
+		"rotted": 14078
+	},
+	{
+		"year": 2018,
+		"intact": 148739,
+		"ambiguous": 6239,
+		"rotted": 9841
+	},
+	{
+		"year": 2019,
+		"intact": 50154,
+		"ambiguous": 1253,
+		"rotted": 1963
+	}
+]
