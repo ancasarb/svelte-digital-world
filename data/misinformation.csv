@@ -1,0 +1,31 @@
+region,topic,percentage
+europe,covid-19,47
+north america,covid-19,53
+asia,covid-19,45
+latin america,covid-19,54
+africa,covid-19,47
+europe,politics,34
+north america,politics,43
+asia,politics,42
+latin america,politics,51
+africa,politics,49
+europe,celebrities,20
+north america,celebrities,22
+asia,celebrities,29
+latin america,celebrities,33
+africa,celebrities,48
+europe,climate change,19
+north america,climate change,32
+asia,climate change,15
+latin america,climate change,21
+africa,climate change,19
+europe,immigration,20
+north america,immigration,27
+asia,immigration,9
+latin america,immigration,18
+africa, immigration,16
+europe,products(e.g. scams),16
+north america,products(e.g. scams),19
+asia,products(e.g. scams),22
+latin america,products(e.g. scams),26
+africa,products(e.g. scams),29
