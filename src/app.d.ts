@@ -19,9 +19,22 @@ declare global {
 			drifted: number;
 		}
 
+		interface Country {
+			type: string;
+			properties: {
+				name: string;
+				id: string;
+			};
+			geometry: {
+				type: string;
+				coordinates: [[number, number]];
+			};
+		}
+
 		interface PageData {
 			linkRot?: LinkRot[];
 			contentDrift?: ContentDrift[];
+			countries?: Country[];
 		}
 	}
 }
