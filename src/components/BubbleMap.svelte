@@ -1,10 +1,14 @@
 <script lang="ts">
-	import { geoEqualEarth, geoPath, line } from 'd3';
-	import { continentsColorScale, regionsCoordinates, scaleLinear } from '../static/regions';
+	import { geoEqualEarth, geoPath, line, scaleLinear } from 'd3';
+	import { continentsColorScale, regionsCoordinates } from '../static/regions';
+	import { metrics } from '../static/metrics';
 
 	export let data: { countries: App.Country[]; internet: App.Internet[] };
 
 	$: innerWidth = 0;
+
+	const metric_name = 'internet_adoption';
+	$: metric = metrics.find((metric) => metric.name == metric_name);
 
 	const margin = {
 		left: 10,
@@ -28,6 +32,8 @@
 	const lineGenerator = line()
 		.x((d) => d.x)
 		.y((d) => d.y);
+
+	$: valueScale = scaleLinear().domain([metric!.min, metric!.max]).range([0, 50]);
 </script>
 
 <svelte:window bind:innerWidth />
@@ -37,11 +43,13 @@
 		{#each data.countries as dt}
 			<path d={pathGenerator(dt)} fill="#e1dfd0" stroke="#c4b9aa" stroke-width="0.5" />
 		{/each}
-		{#each regionsCoordinates as region}
+
+		{#each data.internet as dt}
+			{@const region = regionsCoordinates.find((region) => region.name == dt.name)}
 			{@const [x, y] = projection(region.coordinates)}
 			{@const values = [
 				{ x: x - 5, y },
-				{ x: x, y: y - 25 },
+				{ x: x, y: y - valueScale(dt[metric_name].value) },
 				{ x: x + 5, y: y }
 			]}
 			<path

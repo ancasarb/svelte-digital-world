@@ -20,7 +20,7 @@ export const load = (async ({ fetch }) => {
 	const raw = await fetch(
 		`https://raw.githubusercontent.com/ancasarb/svelte-digital-world/main/data/internet.json`
 	);
-	const data = await result.json();
+	const data = await raw.json();
 
 	return { countries: countries, internet: data };
 }) satisfies PageLoad;

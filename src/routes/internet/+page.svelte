@@ -9,4 +9,4 @@
 <p class="text-left font-bold text-2xl px-24 pt-3">{metrics[0].title}</p>
 <p class="text-left text-lg px-24 pt-2">{metrics[0].subtitle}</p>
 
-<BubbleMap data={data.countries} />
+<BubbleMap data={{ countries: data.countries, internet: data.internet }} />
