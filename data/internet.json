@@ -1,0 +1,363 @@
+[
+	{
+		"name": "Northern America",
+		"internet_adoption": {
+			"value": 92,
+			"type": "percentage"
+		},
+		"share_global_internet_users": {
+			"value": 6.7,
+			"type": "percentage"
+		},
+		"internet_adoption_indexed_share": {
+			"value": 142.8,
+			"type": "numeric"
+		},
+		"unconnected_populations": {
+			"value": 30.2,
+			"type": "numeric"
+		}
+	},
+	{
+		"name": "Central America",
+		"internet_adoption": {
+			"value": 74.9,
+			"type": "percentage"
+		},
+		"share_global_internet_users": {
+			"value": 2.6,
+			"type": "percentage"
+		},
+		"internet_adoption_indexed_share": {
+			"value": 116.2,
+			"type": "numeric"
+		},
+		"unconnected_populations": {
+			"value": 45.2,
+			"type": "numeric"
+		}
+	},
+	{
+		"name": "Caribbean",
+		"internet_adoption": {
+			"value": 68.4,
+			"type": "percentage"
+		},
+		"share_global_internet_users": {
+			"value": 0.6,
+			"type": "percentage"
+		},
+		"internet_adoption_indexed_share": {
+			"value": 106.3,
+			"type": "numeric"
+		},
+		"unconnected_populations": {
+			"value": 14,
+			"type": "numeric"
+		}
+	},
+	{
+		"name": "Southern America",
+		"internet_adoption": {
+			"value": 80.6,
+			"type": "percentage"
+		},
+		"share_global_internet_users": {
+			"value": 6.8,
+			"type": "percentage"
+		},
+		"internet_adoption_indexed_share": {
+			"value": 125.2,
+			"type": "numeric"
+		},
+		"unconnected_populations": {
+			"value": 84.8,
+			"type": "numeric"
+		}
+	},
+	{
+		"name": "Northern Europe",
+		"internet_adoption": {
+			"value": 97.4,
+			"type": "percentage"
+		},
+		"share_global_internet_users": {
+			"value": 2,
+			"type": "percentage"
+		},
+		"internet_adoption_indexed_share": {
+			"value": 151.2,
+			"type": "numeric"
+		},
+		"unconnected_populations": {
+			"value": 2.8,
+			"type": "numeric"
+		}
+	},
+	{
+		"name": "Western Europe",
+		"internet_adoption": {
+			"value": 93.5,
+			"type": "percentage"
+		},
+		"share_global_internet_users": {
+			"value": 3.5,
+			"type": "percentage"
+		},
+		"internet_adoption_indexed_share": {
+			"value": 145.2,
+			"type": "numeric"
+		},
+		"unconnected_populations": {
+			"value": 12.6,
+			"type": "numeric"
+		}
+	},
+	{
+		"name": "Southern Europe",
+		"internet_adoption": {
+			"value": 88.4,
+			"type": "percentage"
+		},
+		"share_global_internet_users": {
+			"value": 2.6,
+			"type": "percentage"
+		},
+		"internet_adoption_indexed_share": {
+			"value": 137.3,
+			"type": "numeric"
+		},
+		"unconnected_populations": {
+			"value": 17.5,
+			"type": "numeric"
+		}
+	},
+	{
+		"name": "Eastern Europe",
+		"internet_adoption": {
+			"value": 86.9,
+			"type": "percentage"
+		},
+		"share_global_internet_users": {
+			"value": 4.9,
+			"type": "percentage"
+		},
+		"internet_adoption_indexed_share": {
+			"value": 134.9,
+			"type": "numeric"
+		},
+		"unconnected_populations": {
+			"value": 37.8,
+			"type": "numeric"
+		}
+	},
+	{
+		"name": "Northern Africa",
+		"internet_adoption": {
+			"value": 65.9,
+			"type": "percentage"
+		},
+		"share_global_internet_users": {
+			"value": 3.3,
+			"type": "percentage"
+		},
+		"internet_adoption_indexed_share": {
+			"value": 102.4,
+			"type": "numeric"
+		},
+		"unconnected_populations": {
+			"value": 89.3,
+			"type": "numeric"
+		}
+	},
+	{
+		"name": "Western Africa",
+		"internet_adoption": {
+			"value": 48,
+			"type": "percentage"
+		},
+		"share_global_internet_users": {
+			"value": 4,
+			"type": "percentage"
+		},
+		"internet_adoption_indexed_share": {
+			"value": 74.6,
+			"type": "numeric"
+		},
+		"unconnected_populations": {
+			"value": 225.7,
+			"type": "numeric"
+		}
+	},
+	{
+		"name": "Middle Africa",
+		"internet_adoption": {
+			"value": 27.9,
+			"type": "percentage"
+		},
+		"share_global_internet_users": {
+			"value": 1.1,
+			"type": "percentage"
+		},
+		"internet_adoption_indexed_share": {
+			"value": 43.4,
+			"type": "numeric"
+		},
+		"unconnected_populations": {
+			"value": 143.4,
+			"type": "numeric"
+		}
+	},
+	{
+		"name": "Eastern Africa",
+		"internet_adoption": {
+			"value": 23.1,
+			"type": "percentage"
+		},
+		"share_global_internet_users": {
+			"value": 2.1,
+			"type": "percentage"
+		},
+		"internet_adoption_indexed_share": {
+			"value": 35.9,
+			"type": "numeric"
+		},
+		"unconnected_populations": {
+			"value": 368.2,
+			"type": "numeric"
+		}
+	},
+	{
+		"name": "Southern Africa",
+		"internet_adoption": {
+			"value": 70.6,
+			"type": "percentage"
+		},
+		"share_global_internet_users": {
+			"value": 0.9,
+			"type": "percentage"
+		},
+		"internet_adoption_indexed_share": {
+			"value": 109.6,
+			"type": "numeric"
+		},
+		"unconnected_populations": {
+			"value": 20.3,
+			"type": "numeric"
+		}
+	},
+	{
+		"name": "Central Asia",
+		"internet_adoption": {
+			"value": 72.5,
+			"type": "percentage"
+		},
+		"share_global_internet_users": {
+			"value": 1.1,
+			"type": "percentage"
+		},
+		"internet_adoption_indexed_share": {
+			"value": 112.5,
+			"type": "numeric"
+		},
+		"unconnected_populations": {
+			"value": 21.4,
+			"type": "numeric"
+		}
+	},
+	{
+		"name": "Eastern Asia",
+		"internet_adoption": {
+			"value": 74.3,
+			"type": "percentage"
+		},
+		"share_global_internet_users": {
+			"value": 24,
+			"type": "percentage"
+		},
+		"internet_adoption_indexed_share": {
+			"value": 115.4,
+			"type": "numeric"
+		},
+		"unconnected_populations": {
+			"value": 426.6,
+			"type": "numeric"
+		}
+	},
+	{
+		"name": "Western Asia",
+		"internet_adoption": {
+			"value": 75.3,
+			"type": "percentage"
+		},
+		"share_global_internet_users": {
+			"value": 4.3,
+			"type": "percentage"
+		},
+		"internet_adoption_indexed_share": {
+			"value": 116.9,
+			"type": "numeric"
+		},
+		"unconnected_populations": {
+			"value": 73.1,
+			"type": "numeric"
+		}
+	},
+	{
+		"name": "Southern Asia",
+		"internet_adoption": {
+			"value": 47.4,
+			"type": "percentage"
+		},
+		"share_global_internet_users": {
+			"value": 18.5,
+			"type": "percentage"
+		},
+		"internet_adoption_indexed_share": {
+			"value": 73.5,
+			"type": "numeric"
+		},
+		"unconnected_populations": {
+			"value": 1061.3,
+			"type": "numeric"
+		}
+	},
+	{
+		"name": "South-Eastern Asia",
+		"internet_adoption": {
+			"value": 75.6,
+			"type": "percentage"
+		},
+		"share_global_internet_users": {
+			"value": 10,
+			"type": "percentage"
+		},
+		"internet_adoption_indexed_share": {
+			"value": 117.4,
+			"type": "numeric"
+		},
+		"unconnected_populations": {
+			"value": 166.7,
+			"type": "numeric"
+		}
+	},
+	{
+		"name": "Oceania",
+		"internet_adoption": {
+			"value": 79.4,
+			"type": "percentage"
+		},
+		"share_global_internet_users": {
+			"value": 0.7,
+			"type": "percentage"
+		},
+		"internet_adoption_indexed_share": {
+			"value": 123.3,
+			"type": "numeric"
+		},
+		"unconnected_populations": {
+			"value": 9.3,
+			"type": "numeric"
+		}
+	}
+]

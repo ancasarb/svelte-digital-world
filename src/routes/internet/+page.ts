@@ -4,9 +4,9 @@ export const load = (async ({ fetch }) => {
 	const result = await fetch(
 		`https://raw.githubusercontent.com/ancasarb/svelte-digital-world/main/data/world-geojson.json`
 	);
-	const raw = (await result.json()).features;
+	const features = (await result.json()).features;
 
-	const countries = raw.map((feature) => {
+	const countries = features.map((feature) => {
 		return {
 			type: feature.type,
 			properties: {
@@ -17,5 +17,10 @@ export const load = (async ({ fetch }) => {
 		};
 	});
 
-	return { countries: countries };
+	const raw = await fetch(
+		`https://raw.githubusercontent.com/ancasarb/svelte-digital-world/main/data/internet.json`
+	);
+	const data = await result.json();
+
+	return { countries: countries, internet: data };
 }) satisfies PageLoad;

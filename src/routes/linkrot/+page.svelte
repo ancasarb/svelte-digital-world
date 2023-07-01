@@ -3,8 +3,7 @@
 
 	export let data: PageData;
 
-	console.log(data);
-
+	// console.log(data);
 </script>
 
 <p>link rot</p>
