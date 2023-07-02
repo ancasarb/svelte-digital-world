@@ -1,12 +1,23 @@
 <script lang="ts">
-	import BubbleMap from '../../components/BubbleMap.svelte';
 	import type { PageData } from './$types';
-	import { metrics } from '../../static/metrics';
+	import { metrics, type Metric } from '../../static/metrics';
+
+	import BubbleMap from '../../components/BubbleMap.svelte';
+	import InternetHeadings from '../../components/InternetHeadings.svelte';
+	import InternetFilter from '../../components/InternetFilter.svelte';
 
 	export let data: PageData;
+
+	const metric_name = 'internet_adoption';
+	let metric: Metric = metrics.find((metric) => metric.name == metric_name)!;
+
+	function onSelect(value: string) {
+		metric = metrics.find((metric) => metric.title.toLocaleLowerCase() == value)!;
+	}
 </script>
 
-<p class="text-left font-bold text-2xl px-24 pt-3">{metrics[0].title}</p>
-<p class="text-left text-lg px-24 pt-2">{metrics[0].subtitle}</p>
+<InternetFilter {onSelect} />
 
-<BubbleMap data={{ countries: data.countries, internet: data.internet }} />
+<InternetHeadings {metric} />
+
+<BubbleMap data={{ countries: data.countries, internet: data.internet }} {metric} />

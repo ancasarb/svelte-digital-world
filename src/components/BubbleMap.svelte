@@ -1,14 +1,11 @@
 <script lang="ts">
 	import { geoEqualEarth, geoPath, line, scaleLinear } from 'd3';
 	import { continentsColorScale, regionsCoordinates } from '../static/regions';
-	import { metrics } from '../static/metrics';
 
 	export let data: { countries: App.Country[]; internet: App.Internet[] };
+	export let metric: Metric;
 
 	$: innerWidth = 0;
-
-	const metric_name = 'internet_adoption';
-	$: metric = metrics.find((metric) => metric.name == metric_name);
 
 	const margin = {
 		left: 10,
@@ -34,6 +31,16 @@
 		.y((d) => d.y);
 
 	$: valueScale = scaleLinear().domain([metric!.min, metric!.max]).range([0, 50]);
+
+	$: highlighted = '';
+
+	const onMouseOver = function (event: MouseEvent, value: string) {
+		highlighted = value;
+	};
+
+	const onMouseOut = function () {
+		highlighted = '';
+	};
 </script>
 
 <svelte:window bind:innerWidth />
@@ -47,18 +54,34 @@
 		{#each data.internet as dt}
 			{@const region = regionsCoordinates.find((region) => region.name == dt.name)}
 			{@const [x, y] = projection(region.coordinates)}
+			{@const metricValue = dt[metric.name]}
 			{@const values = [
 				{ x: x - 5, y },
-				{ x: x, y: y - valueScale(dt[metric_name].value) },
+				{ x: x, y: y - valueScale(metricValue) },
 				{ x: x + 5, y: y }
 			]}
+			{@const color = continentsColorScale(region.continent)}
 			<path
 				d={lineGenerator(values)}
-				stroke={continentsColorScale(region.continent)}
-				fill="none"
+				stroke={color}
+				fill={region.name == highlighted ? color : 'none'}
 				stroke-width="2"
+				on:mouseover={(event) => onMouseOver(event, region.name)}
+				on:mouseout={() => onMouseOut()}
 			/>
-			<text {x} y={y + 10} text-anchor="middle" fill="black" font-size="10px">{region.name}</text>
+			<text
+				{x}
+				y={y + 10}
+				text-anchor="middle"
+				fill="black"
+				font-size="10px"
+				class={highlighted == region.name ? 'font-bold' : ''}
+				>{highlighted == region.name
+					? (`${region.name}: ${metricValue}` + (metric.type == 'percentage'
+						? '%'
+						: ''))
+					: region.name}</text
+			>
 		{/each}
 	</g>
 </svg>
