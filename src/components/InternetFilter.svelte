@@ -5,7 +5,7 @@
 	export let onSelect: (item: string) => void;
 </script>
 
-<ButtonGroup divClass="inline-flex rounded-lg px-12 pt-4">
+<ButtonGroup divClass="px-12 pt-4">
 	{#each _metrics as metric}
 		<Button
 			outline
