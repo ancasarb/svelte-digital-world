@@ -51,7 +51,7 @@
 </script>
 
 <div>
-	<p class="text-center pt-4 pb-4 w-full">
+	<p class="grid grid-cols-1 text-center pt-4 pb-4 px-8">
 		Examine the accessibility and inclusiveness of the internet, considering the number of
 		unconnected or poorly served fraction of the population.
 	</p>
