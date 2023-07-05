@@ -7,14 +7,14 @@
 	export let speedType: string;
 
 	const margin = {
-		left: 125,
+		left: 130,
 		right: 25,
-		top: 10,
-		bottom: 10
+		top: 20,
+		bottom: 5
 	};
 
-	const width = 350;
-	const height = 450;
+	const width = 400;
+	const height = 475;
 
 	$: boundedWidth = width - margin.left - margin.right;
 	$: boundedHeight = height - margin.top - margin.bottom;
@@ -31,22 +31,31 @@
 
 <svg viewBox={`0 0 ${width} ${height}`}>
 	<g transform={`translate(${margin.left}, ${margin.top})`}>
-		{#each filteredData as dt, i}
-			{@const annotationY = yScale(dt.name) + yScale.bandwidth() / 2}
-			<line x1={-5} x2={0} y1={annotationY} y2={annotationY} stroke="#c4b9aa" />
+		{#each filteredData as dt}
+			{@const yStart = yScale(dt.name)}
+			{@const annotationY = yStart + yScale.bandwidth() / 2}
+			<line
+				x1={-9}
+				x2={0}
+				y1={annotationY}
+				y2={annotationY}
+				stroke={_continentsColorScale(dt.continent)}
+				stroke-width="2.5"
+			/>
 			<text
-				x={-6}
+				x={-11}
 				y={annotationY}
 				class="text-xs"
-                fill="black"
+				fill="black"
 				text-anchor="end"
 				alignment-baseline="middle">{dt.name}</text
 			>
 			<rect
 				x={0}
 				fill="#e1dfd0"
-                stroke={_continentsColorScale(dt.continent)}
-				y={yScale(dt.name)}
+				stroke="#c4b9aa"
+				stroke-width="0.5"
+				y={yStart}
 				width={boundedWidth}
 				height={yScale.bandwidth()}
 			/>
@@ -61,5 +70,14 @@
 			stroke="black"
 			stroke-dasharray="5"
 		/>
+		<text
+			x={boundedWidth}
+			dx={-5}
+			dy={-5}
+			y={margin.top}
+			text-anchor="end"
+			fill="black"
+			class="text-xs">100 MB</text
+		>
 	</g>
 </svg>

@@ -17,7 +17,7 @@
 		bottom: 10
 	};
 
-	const width = 1100;
+	const width = 1050;
 	$: boundedWidth = width - margin.left - margin.right;
 
 	$: sphere = { type: 'Sphere' };

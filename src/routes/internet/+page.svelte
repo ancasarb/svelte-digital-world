@@ -51,13 +51,13 @@
 	}
 </script>
 
-<div class="grid grid-cols-[minmax(1100px,_1fr)] text-center pt-4 pb-4 px-8">
+<div class="grid grid-cols-[minmax(1050px,_1fr)] text-center pt-4 pb-4 px-8">
 	<p>
 		Examine the accessibility and inclusiveness of the internet, considering the number of
 		unconnected or poorly served fraction of the population.
 	</p>
 </div>
-<div class="grid grid-cols-[minmax(1100px,_3fr)_minmax(350px,_1fr)]">
+<div class="grid grid-cols-[minmax(1050px,_3fr)_minmax(400px,_1fr)]">
 	<div>
 		<InternetAdoptionFilter onSelect={onSelectAdoptionMetric} />
 
