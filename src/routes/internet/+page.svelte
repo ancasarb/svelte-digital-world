@@ -8,6 +8,7 @@
 	} from './+page';
 
 	import BubbleMap from '../../components/BubbleMap.svelte';
+	import BarChartRace from '../../components/BarChartRace.svelte';
 
 	import InternetSpeedHeadings from './../../components/InternetSpeedHeadings.svelte';
 	import InternetAdoptionHeadings from '../../components/InternetAdoptionHeadings.svelte';
@@ -63,7 +64,7 @@
 		<InternetAdoptionHeadings metric={adoption_metric} />
 
 		<BubbleMap
-			data={{ countries: data.countries, internet: data.internet }}
+			data={{ countries: data.countries, internetMetrics: data.internetMetrics }}
 			metric={adoption_metric}
 		/>
 
@@ -73,6 +74,12 @@
 		<InternetSpeedHeadings />
 		<InternetTypeFilter onSelect={onSelectInternetTypeMetric} />
 		<InternetSpeedTypeFilter onSelect={onSelectInternetSpeedTypeMetric} />
+
+		<BarChartRace
+			data={{ speedMetrics: data.internetSpeeds }}
+			metricType={internet_type_metric}
+			speedType={internet_speed_type_metric}
+		/>
 
 		<Source content="Speedtest Global Index" />
 	</div>

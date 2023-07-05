@@ -37,14 +37,15 @@ declare global {
 		}
 
 		interface InternetSpeed {
-			[metric: string]: [{ name: string; rank: number; raw_value: number }];
+			[metric: string]: [{ name: string; rank: number; raw_value: number; continent: string }];
 		}
 
 		interface PageData {
 			linkRot?: LinkRot[];
 			contentDrift?: ContentDrift[];
 			countries?: Country[];
-			internet?: Internet[];
+			internetMetrics?: Internet[];
+			internetSpeeds?: InternetSpeed;
 		}
 	}
 }

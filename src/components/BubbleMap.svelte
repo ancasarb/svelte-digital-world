@@ -10,8 +10,6 @@
 	export let data: { countries: App.Country[]; internetMetrics: App.Internet[] };
 	export let metric: AdoptionMetric;
 
-	$: innerWidth = 0;
-
 	const margin = {
 		left: 10,
 		right: 10,
@@ -19,7 +17,7 @@
 		bottom: 10
 	};
 
-	$: width = 1100;
+	const width = 1100;
 	$: boundedWidth = width - margin.left - margin.right;
 
 	$: sphere = { type: 'Sphere' };
@@ -43,8 +41,6 @@
 		highlighted = '';
 	};
 </script>
-
-<svelte:window bind:innerWidth />
 
 <svg viewBox={`0 0 ${width} ${height}`}>
 	<g transform={`translate(${margin.left}, ${margin.top})`}>
