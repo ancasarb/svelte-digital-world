@@ -33,22 +33,10 @@ declare global {
 
 		interface Internet {
 			name: string;
-			internet_adoption: {
-				value: number;
-				type: 'percentage';
-			};
-			share_global_internet_users: {
-				value: number;
-				type: 'percentage';
-			};
-			internet_adoption_indexed_share: {
-				value: number;
-				type: 'numeric';
-			};
-			unconnected_populations: {
-				value: number;
-				type: 'numeric';
-			};
+			internet_adoption: number;
+			share_global_internet_users: number;
+			internet_adoption_indexed_share: number;
+			unconnected_populations: number;
 		}
 
 		interface PageData {

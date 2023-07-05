@@ -1,9 +1,14 @@
 <script lang="ts">
-	import { geoEqualEarth, geoPath, line, scaleLinear } from 'd3';
-	import { _continentsColorScale, _regionsCoordinates, type Metric } from '../routes/internet/+page';
+	import { geoEqualEarth, geoPath, scaleLinear } from 'd3';
+	import {
+		_continentsColorScale,
+		_regionsCoordinates,
+		type AdoptionMetric
+	} from '../routes/internet/+page';
+	import BubbleMark from './BubbleMark.svelte';
 
-	export let data: { countries: App.Country[]; internet: App.Internet[] };
-	export let metric: Metric;
+	export let data: { countries: App.Country[]; internet: App.Internet[]; values: any };
+	export let metric: AdoptionMetric;
 
 	$: innerWidth = 0;
 
@@ -14,7 +19,7 @@
 		bottom: 10
 	};
 
-	$: width = innerWidth * 0.9;
+	$: width = 1100;
 	$: boundedWidth = width - margin.left - margin.right;
 
 	$: sphere = { type: 'Sphere' };
@@ -25,10 +30,6 @@
 
 	$: boundedHeight = y1;
 	$: height = boundedHeight + margin.top + margin.bottom;
-
-	const lineGenerator = line()
-		.x((d) => d.x)
-		.y((d) => d.y);
 
 	$: valueScale = scaleLinear().domain([metric!.min, metric!.max]).range([0, 50]);
 
@@ -53,35 +54,29 @@
 
 		{#each data.internet as dt}
 			{@const region = _regionsCoordinates.find((region) => region.name == dt.name)}
+
 			{@const [x, y] = projection(region.coordinates)}
+			{@const [textX, textY] = projection(region?.textCoordinates)}
+
 			{@const metricValue = dt[metric.name]}
-			{@const values = [
-				{ x: x - 5, y },
-				{ x: x, y: y - valueScale(metricValue) },
-				{ x: x + 5, y: y }
-			]}
-			{@const color = _continentsColorScale(region.continent)}
-			<path
-				d={lineGenerator(values)}
-				stroke={color}
-				fill={region.name == highlighted ? color : 'none'}
-				stroke-width="2"
-				on:mouseover={(event) => onMouseOver(event, region.name)}
-				on:mouseout={() => onMouseOut()}
+
+			{@const label =
+				highlighted == region.name
+					? `${region.name}: ${metricValue}` + (metric.type == 'percentage' ? '%' : '')
+					: region.name}
+
+			<BubbleMark
+				baseX={x}
+				baseY={y}
+				point={valueScale(metricValue)}
+				color={_continentsColorScale(region.continent)}
+				{textX}
+				{textY}
+				{label}
+				onMouseOver={(event) => onMouseOver(event, region.name)}
+				onMouseOut={() => onMouseOut()}
+				highlighted={region.name == highlighted}
 			/>
-			<text
-				{x}
-				y={y + 10}
-				text-anchor="middle"
-				fill="black"
-				font-size="10px"
-				class={highlighted == region.name ? 'font-bold' : ''}
-				>{highlighted == region.name
-					? (`${region.name}: ${metricValue}` + (metric.type == 'percentage'
-						? '%'
-						: ''))
-					: region.name}</text
-			>
 		{/each}
 	</g>
 </svg>
