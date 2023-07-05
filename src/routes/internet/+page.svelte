@@ -50,8 +50,8 @@
 	}
 </script>
 
-<div>
-	<p class="grid grid-cols-1 text-center pt-4 pb-4 px-8">
+<div class="grid grid-cols-[minmax(1100px,_1fr)] text-center pt-4 pb-4 px-8">
+	<p>
 		Examine the accessibility and inclusiveness of the internet, considering the number of
 		unconnected or poorly served fraction of the population.
 	</p>
