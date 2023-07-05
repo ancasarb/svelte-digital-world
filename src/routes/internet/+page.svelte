@@ -1,6 +1,6 @@
 <script lang="ts">
 	import type { PageData } from './$types';
-	import { metrics, type Metric } from '../../static/metrics';
+	import { _metrics, type Metric } from './+page';
 
 	import BubbleMap from '../../components/BubbleMap.svelte';
 	import InternetHeadings from '../../components/InternetHeadings.svelte';
@@ -9,10 +9,10 @@
 	export let data: PageData;
 
 	const metric_name = 'internet_adoption';
-	let metric: Metric = metrics.find((metric) => metric.name == metric_name)!;
+	let metric: Metric = _metrics.find((metric) => metric.name == metric_name)!;
 
 	function onSelect(value: string) {
-		metric = metrics.find((metric) => metric.title.toLocaleLowerCase() == value)!;
+		metric = _metrics.find((metric) => metric.title.toLocaleLowerCase() == value)!;
 	}
 </script>
 

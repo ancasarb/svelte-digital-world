@@ -1,12 +1,12 @@
 <script lang="ts">
 	import { Button, ButtonGroup } from 'flowbite-svelte';
-	import { metrics } from '../static/metrics';
+	import { _metrics } from '../routes/internet/+page';
 
 	export let onSelect: (item: string) => void;
 </script>
 
 <ButtonGroup divClass="inline-flex rounded-lg px-12 pt-4">
-	{#each metrics as metric}
+	{#each _metrics as metric}
 		<Button
 			outline
 			color="dark"

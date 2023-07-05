@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { Metric } from "../static/metrics";
+	import type { Metric } from "../routes/internet/+page";
 
     export let metric: Metric;
 

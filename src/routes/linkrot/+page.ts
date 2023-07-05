@@ -1,10 +1,15 @@
 import type { PageLoad } from './$types';
 
 export const load = (async ({ fetch }) => {
-	const result = await fetch(
+	const linkRotResult = await fetch(
 		`https://raw.githubusercontent.com/ancasarb/svelte-digital-world/main/data/link_rot.json`
 	);
-	const content = (await result.json()) as App.LinkRot[];
+	const linkRotContent = (await linkRotResult.json()) as App.LinkRot[];
 
-	return { linkRot: content };
+	const contentDriftResult = await fetch(
+		`https://raw.githubusercontent.com/ancasarb/svelte-digital-world/main/data/content_drift.json`
+	);
+	const contentDriftContent = (await contentDriftResult.json()) as App.ContentDrift[];
+
+	return { linkRot: linkRotContent, contentDrift: contentDriftContent };
 }) satisfies PageLoad;

@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { geoEqualEarth, geoPath, line, scaleLinear } from 'd3';
-	import { continentsColorScale, regionsCoordinates } from '../static/regions';
+	import { _continentsColorScale, _regionsCoordinates, type Metric } from '../routes/internet/+page';
 
 	export let data: { countries: App.Country[]; internet: App.Internet[] };
 	export let metric: Metric;
@@ -52,7 +52,7 @@
 		{/each}
 
 		{#each data.internet as dt}
-			{@const region = regionsCoordinates.find((region) => region.name == dt.name)}
+			{@const region = _regionsCoordinates.find((region) => region.name == dt.name)}
 			{@const [x, y] = projection(region.coordinates)}
 			{@const metricValue = dt[metric.name]}
 			{@const values = [
@@ -60,7 +60,7 @@
 				{ x: x, y: y - valueScale(metricValue) },
 				{ x: x + 5, y: y }
 			]}
-			{@const color = continentsColorScale(region.continent)}
+			{@const color = _continentsColorScale(region.continent)}
 			<path
 				d={lineGenerator(values)}
 				stroke={color}
