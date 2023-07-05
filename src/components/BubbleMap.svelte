@@ -7,7 +7,7 @@
 	} from '../routes/internet/+page';
 	import BubbleMark from './BubbleMark.svelte';
 
-	export let data: { countries: App.Country[]; internet: App.Internet[] };
+	export let data: { countries: App.Country[]; internetMetrics: App.Internet[] };
 	export let metric: AdoptionMetric;
 
 	$: innerWidth = 0;
@@ -52,7 +52,7 @@
 			<path d={pathGenerator(dt)} fill="#e1dfd0" stroke="#c4b9aa" stroke-width="0.5" />
 		{/each}
 
-		{#each data.internet as dt}
+		{#each data.internetMetrics as dt}
 			{@const region = _regionsCoordinates.find((region) => region.name == dt.name)}
 
 			{@const [x, y] = projection(region.coordinates)}

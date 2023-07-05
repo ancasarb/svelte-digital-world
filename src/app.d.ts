@@ -33,10 +33,11 @@ declare global {
 
 		interface Internet {
 			name: string;
-			internet_adoption: number;
-			share_global_internet_users: number;
-			internet_adoption_indexed_share: number;
-			unconnected_populations: number;
+			[metric: string]: number;
+		}
+
+		interface InternetSpeed {
+			[metric: string]: [{ name: string; rank: number; raw_value: number }];
 		}
 
 		interface PageData {

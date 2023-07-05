@@ -18,12 +18,17 @@ export const load = (async ({ fetch }) => {
 		};
 	});
 
-	const raw = await fetch(
+	const rawMetricsData = await fetch(
 		`https://raw.githubusercontent.com/ancasarb/svelte-digital-world/main/data/internet.json`
 	);
-	const data = await raw.json();
+	const metricsData = await rawMetricsData.json();
 
-	return { countries: countries, internet: data };
+	const rawSpeedsData = await fetch(
+		`https://raw.githubusercontent.com/ancasarb/svelte-digital-world/main/data/internet_speed.json`
+	);
+	const speedsData = await rawSpeedsData.json();
+
+	return { countries: countries, internetMetrics: metricsData, internetSpeeds: speedsData };
 }) satisfies PageLoad;
 
 export const _regionsCoordinates: Array<{
