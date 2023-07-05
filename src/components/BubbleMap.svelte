@@ -7,7 +7,7 @@
 	} from '../routes/internet/+page';
 	import BubbleMark from './BubbleMark.svelte';
 
-	export let data: { countries: App.Country[]; internet: App.Internet[]; values: any };
+	export let data: { countries: App.Country[]; internet: App.Internet[] };
 	export let metric: AdoptionMetric;
 
 	$: innerWidth = 0;
