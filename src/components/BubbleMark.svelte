@@ -24,7 +24,7 @@
 	export let onMouseOver;
 	export let onMouseOut;
 
-	const pointY = tweened(point, { duration: 300, easing: cubicInOut });
+	const pointY = tweened(point, { duration: 500, easing: cubicInOut });
 
 	$: pointY.set(point);
 
