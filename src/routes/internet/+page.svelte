@@ -83,7 +83,7 @@
 		/>
 
 		<Source
-			content="Speedtest Global Index - calculations are based on median country speeds (from May 2023)."
+			content="Speedtest Global Index - calculations are based on median country speeds from May 2023."
 		/>
 	</div>
 </div>
