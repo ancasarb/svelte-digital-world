@@ -1,19 +1,19 @@
 <script lang="ts">
 	import type { PageData } from './$types';
 	import {
-		_adoption_metrics,
+		_internet_metrics,
 		_internet_speed_type_metrics,
 		_internet_type_metrics,
-		type AdoptionMetric
+		type InternetMetric
 	} from './+page';
 
 	import BubbleMap from '../../components/BubbleMap.svelte';
 	import BarChartRace from '../../components/BarChartRace.svelte';
 
 	import InternetSpeedHeadings from './../../components/InternetSpeedHeadings.svelte';
-	import InternetAdoptionHeadings from '../../components/InternetAdoptionHeadings.svelte';
+	import InternetMetricHeadings from '../../components/InternetMetricHeadings.svelte';
 
-	import InternetAdoptionFilter from '../../components/InternetAdoptionFilter.svelte';
+	import InternetMetricFilter from '../../components/InternetMetricFilter.svelte';
 	import InternetTypeFilter from '../../components/InternetTypeFilter.svelte';
 	import InternetSpeedTypeFilter from '../../components/InternetSpeedTypeFilter.svelte';
 
@@ -21,13 +21,13 @@
 
 	export let data: PageData;
 
-	const default_adoption_metric_name = 'internet_adoption';
-	let adoption_metric: AdoptionMetric = _adoption_metrics.find(
-		(metric) => metric.name == default_adoption_metric_name
+	const default_internet_metric_name = 'internet_adoption';
+	let internet_metric: InternetMetric = _internet_metrics.find(
+		(metric) => metric.name == default_internet_metric_name
 	)!;
 
-	function onSelectAdoptionMetric(value: string) {
-		adoption_metric = _adoption_metrics.find(
+	function onSelectInternetMetric(value: string) {
+		internet_metric = _internet_metrics.find(
 			(metric) => metric.title.toLocaleLowerCase() == value
 		)!;
 	}
@@ -53,19 +53,20 @@
 
 <div class="grid grid-cols-[minmax(1050px,_1fr)] text-center pt-4 pb-4 px-8">
 	<p>
-		Examine the accessibility and inclusiveness of the internet, considering the number of
-		unconnected or poorly served fraction of the population.
+		Digital use still varies meaningfully around the world. Examine the accessibility and
+		inclusiveness of the internet, considering the number of unconnected or poorly served fraction
+		of the population.
 	</p>
 </div>
 <div class="grid grid-cols-[minmax(1050px,_3fr)_minmax(400px,_1fr)]">
 	<div>
-		<InternetAdoptionFilter onSelect={onSelectAdoptionMetric} />
+		<InternetMetricFilter onSelect={onSelectInternetMetric} />
 
-		<InternetAdoptionHeadings metric={adoption_metric} />
+		<InternetMetricHeadings metric={internet_metric} />
 
 		<BubbleMap
 			data={{ countries: data.countries, internetMetrics: data.internetMetrics }}
-			metric={adoption_metric}
+			metric={internet_metric}
 		/>
 
 		<Source content="DataReportal - Digital 2023 Global Overview Report" />
@@ -81,6 +82,8 @@
 			speedType={internet_speed_type_metric}
 		/>
 
-		<Source content="Speedtest Global Index" />
+		<Source
+			content="Speedtest Global Index - calculations are based on median country speeds (from May 2023)."
+		/>
 	</div>
 </div>

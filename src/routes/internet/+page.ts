@@ -153,24 +153,30 @@ export const _regionsCoordinates: Array<{
 	}
 ];
 
-export const _continentsColorScale = scaleOrdinal()
-	.domain(['Asia', 'Africa', 'North America', 'South America', 'Antarctica', 'Europe', 'Australia'])
-	.range(['#f9b25b', '#51976e', '#0a5881', '#997596', '#f7e165', '#53b3c7', '#d5a09e']);
+// export const _continentsColorScale = scaleOrdinal()
+// 	.domain(['Asia', 'Africa', 'North America', 'South America', 'Antarctica', 'Europe', 'Australia'])
+// 	.range(['#f9b25b', '#51976e', '#0a5881', '#997596', '#f7e165', '#53b3c7', '#d5a09e']);
 
-export interface AdoptionMetric {
+	export const _continentsColorScale = scaleOrdinal()
+	.domain(['Asia', 'Africa', 'North America', 'South America', 'Antarctica', 'Europe', 'Australia'])
+	.range(['#f9b25b', '#f9b25b', '#f9b25b', '#f9b25b', '#f9b25b', '#f9b25b', '#f9b25b']);
+
+export interface InternetMetric {
 	name: string;
 	title: string;
-	subtitle?: string;
+	subtitle: string;
+	description?: string;
 	min: number;
 	max: number;
 	type: 'percentage' | 'numeric';
 }
 
-export const _adoption_metrics: Array<AdoptionMetric> = [
+export const _internet_metrics: Array<InternetMetric> = [
 	{
 		name: 'internet_adoption',
 		title: 'Internet Adoption',
 		subtitle: 'Internet Users as a Percentage of Total Population',
+		description: 'Regional disparities in internet adoption persist; at the top of the rankings, internet adoption rates now exceed 90 percent in a total of three regions, compared to just over 20 percent in the regions with the lowest rates of internet adoption.',
 		min: 0,
 		max: 100,
 		type: 'percentage'
@@ -179,6 +185,7 @@ export const _adoption_metrics: Array<AdoptionMetric> = [
 		name: 'share_global_internet_users',
 		title: 'Share of Global Internet Users',
 		subtitle: 'Internet Users as a Percentage of Total Global Internet Users',
+		description: 'A small number of regions, such as Eastern Asia and Southern Asia, account for a significant proportion of global internet users. In contrast, regions like Middle Africa and Southern Africa contribute less to the global internet user population.',
 		min: 0,
 		max: 50,
 		type: 'percentage'
@@ -187,7 +194,8 @@ export const _adoption_metrics: Array<AdoptionMetric> = [
 		name: 'internet_adoption_indexed_share',
 		title: 'Internet Adoption: Indexed Share',
 		subtitle:
-			"Comparing Each Region's Share of Global Internet Users with Each Region's Respective Share of the Global Population",
+			"Indices Comparing Each Region's Share of Global Internet Users with Each Region's Respective Share of the Global Population",
+		description: 'Index values above 100 indicate higher internet usage compared to the global average, while values below 100 indicate lower internet usage compared to the global average.',
 		min: 0,
 		max: 175,
 		type: 'numeric'
@@ -196,6 +204,7 @@ export const _adoption_metrics: Array<AdoptionMetric> = [
 		name: 'unconnected_populations',
 		title: 'Unconnected Populations',
 		subtitle: 'Number of People (in Millions) Who Do Not Use the Internet',
+		description: 'Unconnected populations are primarily concentrated in lower and middle-income countries, with barriers such as literacy, digital skills, affordability, and safety and security hindering internet adoption.',
 		min: 0,
 		max: 1100,
 		type: 'numeric'

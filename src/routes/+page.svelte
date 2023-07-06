@@ -74,8 +74,9 @@
 				<p class="text-4xl font-bold">internet adoption</p>
 				<div class="md:text-left lg:text-left xl:text-left 2xl:text-left space-y-4 p-8">
 					<p>
-						Examine the accessibility and inclusiveness of the internet, considering the number of
-						unconnected or poorly served fraction of the population.
+						Digital use still varies meaningfully around the world. Examine the accessibility and
+						inclusiveness of the internet, considering the number of unconnected or poorly served
+						fraction of the population.
 					</p>
 				</div>
 			</a>

@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { tweened } from 'svelte/motion';
-
+	import { cubicInOut } from 'svelte/easing';
 	import { line } from 'd3';
 
 	export let values;
@@ -24,7 +24,7 @@
 	export let onMouseOver;
 	export let onMouseOut;
 
-	const pointY = tweened(point, { duration: 300 });
+	const pointY = tweened(point, { duration: 300, easing: cubicInOut });
 
 	$: pointY.set(point);
 

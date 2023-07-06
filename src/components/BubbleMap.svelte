@@ -3,12 +3,12 @@
 	import {
 		_continentsColorScale,
 		_regionsCoordinates,
-		type AdoptionMetric
+		type InternetMetric
 	} from '../routes/internet/+page';
 	import BubbleMark from './BubbleMark.svelte';
 
 	export let data: { countries: App.Country[]; internetMetrics: App.Internet[] };
-	export let metric: AdoptionMetric;
+	export let metric: InternetMetric;
 
 	const margin = {
 		left: 10,
