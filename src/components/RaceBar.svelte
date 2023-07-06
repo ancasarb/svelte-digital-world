@@ -9,6 +9,8 @@
 	export let value: number;
 	export let annotation: string;
 
+	export let replay: boolean;
+
 	$: annotationY = y + height / 2;
 
 	let duration;
@@ -23,6 +25,18 @@
 		duration.set(width);
 
 		opacity.set(1);
+	}
+
+	$: {
+		if (replay || !replay) {
+			rawDuration = 100 / (value / 8);
+			duration = tweened(0, { duration: 50 * rawDuration, delay: 500, easing: cubicInOut });
+			opacity = tweened(0, { duration: 50 * rawDuration, delay: 500, easing: cubicInOut });
+
+			duration.set(width);
+
+			opacity.set(1);
+		}
 	}
 
 	let totalTime: string;
