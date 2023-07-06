@@ -52,7 +52,7 @@
 		}
 	}
 
-	$: isGlobal = annotation == 'global';
+	$: isGlobal = annotation == 'Global';
 </script>
 
 <line
