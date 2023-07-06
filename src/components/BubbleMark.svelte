@@ -50,6 +50,8 @@
 	text-anchor="middle"
 	fill="black"
 	class={highlighted ? 'font-bold text-xs' : 'text-xs'}
+	on:mouseover={onMouseOver}
+	on:mouseout={onMouseOut}
 >
 	{#each label.split(' ') as fragment}
 		<tspan x={textX} dy="1.2em" text-anchor="middle">{fragment}</tspan>

@@ -82,7 +82,7 @@ export const _regionsCoordinates: Array<{
 	{
 		name: 'Eastern Europe',
 		coordinates: [30.523333, 50.450001],
-		textCoordinates: [45.259230045370096, 57.99735028322929],
+		textCoordinates: [48.259230045370096, 57.99735028322929],
 		continent: 'Europe'
 	},
 	{
