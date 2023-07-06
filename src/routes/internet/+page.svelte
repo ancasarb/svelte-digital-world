@@ -60,7 +60,7 @@
 </div>
 <div class="grid grid-cols-[minmax(1050px,_3fr)_minmax(400px,_1fr)]">
 	<div>
-		<InternetMetricFilter onSelect={onSelectInternetMetric} />
+		<InternetMetricFilter onSelect={onSelectInternetMetric} current={internet_metric.name}/>
 
 		<InternetMetricHeadings metric={internet_metric} />
 
@@ -73,8 +73,8 @@
 	</div>
 	<div>
 		<InternetSpeedHeadings />
-		<InternetTypeFilter onSelect={onSelectInternetTypeMetric} />
-		<InternetSpeedTypeFilter onSelect={onSelectInternetSpeedTypeMetric} />
+		<InternetTypeFilter onSelect={onSelectInternetTypeMetric} current={internet_type_metric}/>
+		<InternetSpeedTypeFilter onSelect={onSelectInternetSpeedTypeMetric} current={internet_speed_type_metric}/>
 
 		<BarChartRace
 			data={{ speedMetrics: data.internetSpeeds }}
