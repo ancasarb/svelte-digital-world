@@ -7,7 +7,7 @@
 		type InternetMetric
 	} from './+page';
 
-	import BubbleMap from '../../components/BubbleMap.svelte';
+	import SymbolMap from '../../components/SymbolMap.svelte';
 	import BarChartRace from '../../components/BarChartRace.svelte';
 
 	import InternetSpeedHeadings from './../../components/InternetSpeedHeadings.svelte';
@@ -64,7 +64,7 @@
 
 		<InternetMetricHeadings metric={internet_metric} />
 
-		<BubbleMap
+		<SymbolMap
 			data={{ countries: data.countries, internetMetrics: data.internetMetrics }}
 			metric={internet_metric}
 		/>

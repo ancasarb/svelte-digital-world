@@ -5,7 +5,7 @@
 		_regionsCoordinates,
 		type InternetMetric
 	} from '../routes/internet/+page';
-	import BubbleMark from './BubbleMark.svelte';
+	import SymbolMark from './SymbolMark.svelte';
 
 	export let data: { countries: App.Country[]; internetMetrics: App.Internet[] };
 	export let metric: InternetMetric;
@@ -61,7 +61,7 @@
 					? `${region.name}: ${metricValue}` + (metric.type == 'percentage' ? '%' : '')
 					: region.name}
 
-			<BubbleMark
+			<SymbolMark
 				baseX={x}
 				baseY={y}
 				point={valueScale(metricValue)}
