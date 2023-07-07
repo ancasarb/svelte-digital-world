@@ -55,14 +55,7 @@
 	$: isGlobal = annotation == 'Global';
 </script>
 
-<line
-	x1={-9}
-	x2={0}
-	y1={annotationY}
-	y2={annotationY}
-	stroke="#c4b9aa"
-	stroke-width={isGlobal ? '2' : '0.5'}
-/>
+<line x1={-9} x2={0} y1={annotationY} y2={annotationY} stroke="#c4b9aa" />
 <text
 	x={-11}
 	y={annotationY}
@@ -76,6 +69,7 @@
 	fill="#e1dfd0"
 	stroke="#c4b9aa"
 	stroke-width={isGlobal ? '2' : '0.5'}
+	opacity={isGlobal ? 0.3 : 1}
 	{y}
 	width={$duration}
 	{height}
