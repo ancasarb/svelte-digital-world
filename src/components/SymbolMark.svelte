@@ -3,8 +3,6 @@
 	import { cubicInOut } from 'svelte/easing';
 	import { line } from 'd3';
 
-	export let values;
-
 	const lineGenerator = line()
 		.x((d) => d.x)
 		.y((d) => d.y);

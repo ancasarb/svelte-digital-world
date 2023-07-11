@@ -1,11 +1,13 @@
 <script lang="ts">
 	import { geoEqualEarth, geoPath, scaleLinear } from 'd3';
 	import {
-		_continentsColorScale,
 		_regionsCoordinates,
+		_regionHighlightColor,
+		_regionNormalColor,
 		type InternetMetric
-	} from '../routes/internet/+page';
+	} from '../routes/internet-scrolly/+page';
 	import SymbolMark from './SymbolMark.svelte';
+	import LegendItem from './LegendItem.svelte';
 
 	export let data: { countries: App.Country[]; internetMetrics: App.Internet[] };
 	export let metric: InternetMetric;
@@ -56,10 +58,17 @@
 
 			{@const metricValue = dt[metric.name]}
 
-			{@const normalColor = _continentsColorScale(region.continent)}
-			{@const highlightColor = "#FF3333"}
-
-			{@const color = metric.name == "internet_adoption" ? (metricValue >= 50 ? normalColor : "#FF3333"): metric.name == "share_global_internet_users" ? (metricValue < 10 ? normalColor : "#FF3333") : metric.name == "internet_adoption_indexed_share" ? (metricValue >= 100 ? normalColor : "#FF3333"): normalColor}
+			{@const color = metric.threshold
+				? metric.thresholdType == '<'
+					? metricValue < metric.threshold
+						? _regionHighlightColor
+						: _regionNormalColor
+					: metric.thresholdType == '>='
+					? metricValue >= metric.threshold
+						? _regionHighlightColor
+						: _regionNormalColor
+					: _regionNormalColor
+				: _regionNormalColor}
 
 			{@const label =
 				highlighted == region.name
@@ -79,11 +88,49 @@
 				highlighted={region.name == highlighted}
 			/>
 		{/each}
-		<text x={50} y={400} class="text-xs" fill="#666666">
-			Hover your mouse over
-		</text>
-		<text x={50} y={400} dy={20} class="text-xs" fill="#666666">
-			to explore further.
-		</text>
+		<text x={50} y={400} class="text-xs" fill="#666666"> Hover your mouse over </text>
+		<text x={50} y={400} dy={20} class="text-xs" fill="#666666"> to explore further. </text>
+		{#if metric.threshold}
+			<LegendItem
+				baseX={50}
+				baseY={480}
+				point={50}
+				color={_regionNormalColor}
+				highlighted={false}
+			/>
+			<text x={50} y={480} dy={15} class="text-xs" fill="black" text-anchor="middle"
+				>{metric.oppositeThresholdType}
+				{metric.threshold}
+				{metric.type == 'percentage' ? '%' : ''}</text
+			>
+			<LegendItem baseX={58} baseY={480} point={50} color={_regionNormalColor} highlighted={true} />
+
+			<LegendItem
+				baseX={110}
+				baseY={480}
+				point={50}
+				color={_regionHighlightColor}
+				highlighted={false}
+			/>
+			<text x={110} y={480} dy={15} class="text-xs" fill="black" text-anchor="middle"
+				>{metric.thresholdType} {metric.threshold} {metric.type == 'percentage' ? '%' : ''}</text
+			>
+			<LegendItem
+				baseX={118}
+				baseY={480}
+				point={50}
+				color={_regionHighlightColor}
+				highlighted={true}
+			/>
+		{:else}
+			<LegendItem
+				baseX={90}
+				baseY={480}
+				point={50}
+				color={_regionNormalColor}
+				highlighted={false}
+			/>
+			<LegendItem baseX={98} baseY={480} point={50} color={_regionNormalColor} highlighted={true} />
+		{/if}
 	</g>
 </svg>
