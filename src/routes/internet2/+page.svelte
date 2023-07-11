@@ -60,9 +60,9 @@
 		const scroller = scrollama();
 
 		function handleResize() {
-			stepHeight = Math.floor(innerHeight * 0.9);
+			stepHeight = 670;
 
-			figureHeight = innerHeight - innerHeight / 5;
+			figureHeight = 700;
 			figureMarginTop = (innerHeight - figureHeight) / 10;
 
 			scroller.resize();
@@ -130,7 +130,7 @@
 	</figure>
 </section>
 
-<div class="pl-80 pr-80 mr-80 ml-80 mt-[150px]">
+<div class="pl-80 pr-80 mr-80 ml-80">
 	<section id="outro" class="flex justify-center w-[400px] h-[550px]">
 		<div>
 			<InternetSpeedHeadings />
