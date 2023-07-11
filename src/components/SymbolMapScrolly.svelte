@@ -11,10 +11,10 @@
 	export let metric: InternetMetric;
 
 	const margin = {
-		left: 10,
+		left: 0,
 		right: 10,
-		top: 10,
-		bottom: 10
+		top: 25,
+		bottom: 0
 	};
 
 	const width = 1050;
@@ -42,7 +42,7 @@
 	};
 </script>
 
-<svg viewBox={`0 0 ${width} ${height}`}>
+<svg {width} {height}>
 	<g transform={`translate(${margin.left}, ${margin.top})`}>
 		{#each data.countries as dt}
 			<path d={pathGenerator(dt)} fill="#e1dfd0" stroke="#c4b9aa" stroke-width="0.5" />
@@ -79,5 +79,11 @@
 				highlighted={region.name == highlighted}
 			/>
 		{/each}
+		<text x={50} y={400} class="text-xs" fill="#666666">
+			Hover your mouse over
+		</text>
+		<text x={50} y={400} dy={20} class="text-xs" fill="#666666">
+			to explore further.
+		</text>
 	</g>
 </svg>

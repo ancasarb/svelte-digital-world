@@ -1,6 +1,8 @@
 <script lang="ts">
+	import BarChartRaceScrolly from './../../components/BarChartRaceScrolly.svelte';
 	import InternetMetricHeadingsScrolly from './../../components/InternetMetricHeadingsScrolly.svelte';
 	import SymbolMapScrolly from './../../components/SymbolMapScrolly.svelte';
+
 	import { onMount } from 'svelte';
 	import scrollama from 'scrollama';
 
@@ -11,8 +13,6 @@
 		_internet_type_metrics,
 		type InternetMetric
 	} from './+page';
-
-	import BarChartRace from '../../components/BarChartRace.svelte';
 
 	import InternetSpeedHeadings from './../../components/InternetSpeedHeadings.svelte';
 
@@ -60,10 +60,10 @@
 		const scroller = scrollama();
 
 		function handleResize() {
-			stepHeight = Math.floor(innerHeight * 0.75);
+			stepHeight = Math.floor(innerHeight * 0.9);
 
 			figureHeight = innerHeight - innerHeight / 5;
-			figureMarginTop = (innerHeight - figureHeight) / 2;
+			figureMarginTop = (innerHeight - figureHeight) / 10;
 
 			scroller.resize();
 		}
@@ -78,7 +78,7 @@
 			scroller
 				.setup({
 					step: '#scrolly article .step',
-					offset: 0.5
+					offset: 0.4
 					// debug: false
 				})
 				.onStepEnter(handleStepEnter);
@@ -90,18 +90,8 @@
 
 <svelte:window bind:innerWidth bind:innerHeight />
 
-<div class="grid grid-cols-[minmax(750px,750px)] justify-center m-160">
-	<section id="intro">
-		<p>
-			Digital use still varies meaningfully around the world. Examine the accessibility and
-			inclusiveness of the internet, considering the number of unconnected or poorly served fraction
-			of the population.
-		</p>
-	</section>
-</div>
-
-<section id="scrolly" class="p-4">
-	<article bind:this={article} class="max-w-xs">
+<section id="scrolly" class="p-4 relative flex">
+	<article bind:this={article} class="max-w-xs relative py-0 px-4">
 		<div class="step" data-step="1" style="height: {stepHeight}px">
 			<InternetMetricHeadingsScrolly metric={_internet_metrics[0]} />
 		</div>
@@ -116,21 +106,32 @@
 		</div>
 	</article>
 
-	<figure bind:this={figure} style="height: {figureHeight}px; top:{figureMarginTop}px;">
-		<p class="text-left text-md px-12 pt-2 font-bold">{internet_metric.subtitle}</p>
-		<p class="text-left text-xs px-12 pt-2 text-gray-500">
-			Hover your mouse over to explore further.
-		</p>
-		<SymbolMapScrolly
-			data={{ countries: data.countries, internetMetrics: data.internetMetrics }}
-			metric={internet_metric}
-		/>
+	<figure bind:this={figure} style="height: {figureHeight}px; top:{figureMarginTop}px;" class="sticky">
+		<section id="intro" class="text-center">
+			<p class="text-2xl m-7 w-[1150px]">
+				Digital use still varies meaningfully around the world. Examine the accessibility and
+				inclusiveness of the internet, considering the number of unconnected or poorly served
+				fraction of the population.
+			</p>
+		</section>
+
+		<div class="w-[1150px]">
+			<p class="text-left text-lg px-10 font-semibold">{internet_metric.subtitle}</p>
+		</div>
+
+		<div class="w-[1050px]">
+			<SymbolMapScrolly
+				data={{ countries: data.countries, internetMetrics: data.internetMetrics }}
+				metric={internet_metric}
+			/>
+		</div>
 
 		<Source content="DataReportal - Digital 2023 Global Overview Report" />
 	</figure>
 </section>
-<div class="grid grid-cols-[minmax(500px,500px)] justify-center m-10">
-	<section id="outro">
+
+<div class="pl-80 pr-80 mr-80 ml-80 mt-[150px]">
+	<section id="outro" class="flex justify-center w-[400px] h-[550px]">
 		<div>
 			<InternetSpeedHeadings />
 			<InternetTypeFilter onSelect={onSelectInternetTypeMetric} current={internet_type_metric} />
@@ -139,7 +140,7 @@
 				current={internet_speed_type_metric}
 			/>
 
-			<BarChartRace
+			<BarChartRaceScrolly
 				data={{ speedMetrics: data.internetSpeeds }}
 				metricType={internet_type_metric}
 				speedType={internet_speed_type_metric}
@@ -153,25 +154,8 @@
 </div>
 
 <style>
-	#scrolly {
-		position: relative;
-		display: flex;
-	}
 
 	#scrolly > * {
 		flex: 1;
-	}
-
-	article {
-		position: relative;
-		padding: 0 1rem;
-	}
-
-	figure {
-		position: sticky;
-		width: 100%;
-		margin: 0;
-		transform: translate3d(0, 0, 0);
-		z-index: 0;
 	}
 </style>
